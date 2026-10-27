@@ -12,7 +12,23 @@ function findFileLink(record) {
     var fileLink = record.filename.includes('/') ? record.filename : "{{ '/objects/' | relative_url }}" + record.filename;
     return fileLink;
 }
-/* function to create item page features */ 
+/* escape text before inserting it into the page as HTML */
+function escapeHtml(text) {
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+/* panel with the transcription of an item; "transcript" holds the text and
+   "transcript_method" says how it was produced (model, date, whether it was corrected) */
+function transcriptPanel(item) {
+    var text = item.transcript ? item.transcript.trim() : "";
+    if (text == "") { return ""; }
+    var method = item.transcript_method ? item.transcript_method.trim() : "";
+    return '<section class="transcript-panel" aria-labelledby="transcript-title">'
+        + '<h3 id="transcript-title" class="h5">Transcripción</h3>'
+        + (method != "" ? '<p class="transcript-method small">' + escapeHtml(method) + '</p>' : '')
+        + '<div class="transcript-text">' + escapeHtml(text) + '</div>'
+        + '</section>';
+}
+/* function to create item page features */
 function displayItem(record, prev_id, next_id, compound_object) { 
 
     /* add item title */
@@ -370,6 +386,23 @@ function displayItem(record, prev_id, next_id, compound_object) {
                     <div class="mt-2">
                         ${itemLink}
                     </div>
+                </div>
+            </div>
+        `;
+    } else if (transcriptPanel(record) != "" && record.format.includes('image')) {
+        /* image with transcript: image and transcript side by side */
+        itemContent = `
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-lg-6">
+                    <div class="card text-center">
+                        ${itemImage}
+                        <div class="card-body">
+                            ${itemLink}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    ${transcriptPanel(record)}
                 </div>
             </div>
         `;
