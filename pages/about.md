@@ -75,7 +75,7 @@ elementos que no son texto impreso, como orlas, grabados, escudos y marcas tipog
 anotaciones manuscritas posteriores (`[añadido: …]`). Las lecturas dudosas se marcan con `[lectura?]`
 y los pasajes que no se leen, con `[ilegible]`.
 
-No se han corregido las salidas, es la transcrión literal del LLM.
+No se han corregido las salidas, es la transcripción literal del LLM.
 
 El prompt empleado:
 

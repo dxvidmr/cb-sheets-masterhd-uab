@@ -9,7 +9,7 @@
 title: Portadas y encabezamientos de impresos hispánicos
 
 # Subtítulo breve bajo el título de la portada; puede dejarse vacío
-tagline: Colección de ejemplo del Máster en Humanidades y Patrimonio Digitales (UAB)
+tagline: Colección de ejemplo para el Máster en Humanidades y Patrimonio Digitales (UAB)
 
 # Descripción de una o dos frases: aparece en la portada y en el pie, y la leen los buscadores
 description: "Portadas y títulos de cabecera de ediciones antiguas en castellano, reunidos a partir de bibliotecas digitales enlazadas en Europeana, con sus metadatos y sus transcripciones."
@@ -25,18 +25,22 @@ metadata-csv: https://docs.google.com/spreadsheets/d/e/2PACX-1vQynGPTD1wk04y2qhT
 # Imagen de la cabecera de la portada: el objectid de uno de los objetos de la colección
 featured-image: quijote-1605
 
+# true añade a la portada un recuadro con los autores más frecuentes de la colección
+home-creators: false
+
 # Aspecto visual: nombre de un tema de Bootswatch (https://bootswatch.com).
 # Algunos que funcionan bien: flatly, lux, journal, sandstone, litera. Vacío para el aspecto básico.
-bootswatch: flatly
+bootswatch: lux
 
 # Colores propios, que se aplican sobre el tema anterior. En hexadecimal y entre comillas, por ejemplo
-# "#2f3b33" (se pueden elegir en https://htmlcolorcodes.com). Vacíos (""), se mantienen los del tema.
+# "#2f3b33" (se pueden elegir en https://htmlcolorcodes.com). Vacíos ("") o con solo "#", se mantienen
+# los del tema.
 # Menú superior, pie y franja del título en la portada
-color-menu: "#2f3b33"
+color-menu: "#"
 # Enlaces, botones y etiquetas de materias
-color-acento: "#4f6b4a"
+color-acento: "#A8A8A8"
 # Fondo de las páginas
-color-fondo: "#f4f5f1"
+color-fondo: "#"
 
 # Enlace al repositorio de la colección en GitHub
 source-code: https://github.com/dxvidmr/cb-sheets-masterhd-uab
