@@ -8,7 +8,8 @@ location,Location
 latitude,Latitude
 longitude,Longitude
 source,Source
-identifier,Source Identifier,,true
+identifier,Source Identifier,,
+record_url,Digital Record,,true
 type,Type,
 format,Format,
 rights,Rights,
