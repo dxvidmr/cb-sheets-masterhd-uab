@@ -1,0 +1,37 @@
+{%- comment -%}
+    Own colours from _config.yml (color-menu, color-acento, color-fondo), applied over the Bootstrap or
+    Bootswatch theme. Each one is optional: when it is empty, the theme's colour stays.
+{%- endcomment -%}
+{%- if site.color-menu != "" and site.color-menu or site.color-acento != "" and site.color-acento or site.color-fondo != "" and site.color-fondo -%}
+<style>
+{%- if site.color-menu and site.color-menu != "" %}
+/* menu, footer and the title band of the home page */
+.bg-dark { background-color: {{ site.color-menu }} !important; }
+.bg-dark.bg-opacity-75 { background-color: color-mix(in srgb, {{ site.color-menu }} 75%, transparent) !important; }
+/* the theme's colour for the current page in the menu may clash with the new background */
+.navbar .nav-link.active, #footer-nav .nav-link.active { color: #fff !important; background: none; text-decoration: underline; text-underline-offset: 0.35em; }
+{%- endif %}
+{%- if site.color-acento and site.color-acento != "" %}
+/* links, buttons and subject tags */
+:root { --bs-primary: {{ site.color-acento }}; }
+main a:not(.btn):not(.nav-link):not(.dropdown-item), .breadcrumb a { color: {{ site.color-acento }} !important; }
+main a:not(.btn):not(.nav-link):not(.dropdown-item):hover { color: color-mix(in srgb, {{ site.color-acento }} 75%, black) !important; }
+.btn-primary, .btn-success {
+    --bs-btn-bg: {{ site.color-acento }}; --bs-btn-border-color: {{ site.color-acento }};
+    --bs-btn-hover-bg: color-mix(in srgb, {{ site.color-acento }} 80%, black); --bs-btn-hover-border-color: color-mix(in srgb, {{ site.color-acento }} 80%, black);
+    --bs-btn-active-bg: color-mix(in srgb, {{ site.color-acento }} 70%, black); --bs-btn-active-border-color: color-mix(in srgb, {{ site.color-acento }} 70%, black);
+    --bs-btn-color: #fff; --bs-btn-hover-color: #fff; --bs-btn-active-color: #fff;
+}
+.btn-outline-primary {
+    --bs-btn-color: {{ site.color-acento }}; --bs-btn-border-color: {{ site.color-acento }};
+    --bs-btn-hover-bg: {{ site.color-acento }}; --bs-btn-hover-border-color: {{ site.color-acento }}; --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: {{ site.color-acento }}; --bs-btn-active-border-color: {{ site.color-acento }}; --bs-btn-active-color: #fff;
+}
+.page-item.active .page-link { background-color: {{ site.color-acento }}; border-color: {{ site.color-acento }}; }
+{%- endif %}
+{%- if site.color-fondo and site.color-fondo != "" %}
+/* page background */
+body { background-color: {{ site.color-fondo }}; }
+{%- endif %}
+</style>
+{%- endif -%}

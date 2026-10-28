@@ -29,6 +29,15 @@ featured-image: quijote-1605
 # Algunos que funcionan bien: flatly, lux, journal, sandstone, litera. Vacío para el aspecto básico.
 bootswatch: flatly
 
+# Colores propios, que se aplican sobre el tema anterior. En hexadecimal y entre comillas, por ejemplo
+# "#2f3b33" (se pueden elegir en https://htmlcolorcodes.com). Vacíos (""), se mantienen los del tema.
+# Menú superior, pie y franja del título en la portada
+color-menu: "#2f3b33"
+# Enlaces, botones y etiquetas de materias
+color-acento: "#4f6b4a"
+# Fondo de las páginas
+color-fondo: "#f4f5f1"
+
 # Enlace al repositorio de la colección en GitHub
 source-code: https://github.com/dxvidmr/cb-sheets-masterhd-uab
 
