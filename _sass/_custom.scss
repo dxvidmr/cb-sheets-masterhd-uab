@@ -51,3 +51,24 @@
     color: #fff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+/* Code blocks in Markdown pages (the prompt in About): wrapped lines instead of one long scrolling
+   line, on a light panel that follows the theme */
+.about-contents > pre,
+.about-contents > .highlighter-rouge pre {
+    max-width: 650px;
+    margin: 0 auto 1rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.about-contents pre code {
+    font-size: inherit;
+    white-space: inherit;
+    color: var(--bs-body-color);
+}
