@@ -22,10 +22,22 @@ function transcriptPanel(item) {
     var text = item.transcript ? item.transcript.trim() : "";
     if (text == "") { return ""; }
     var method = item.transcript_method ? item.transcript_method.trim() : "";
-    return '<section class="transcript-panel" aria-labelledby="transcript-title">'
-        + '<h3 id="transcript-title" class="h5">Transcription</h3>'
-        + (method != "" ? '<p class="transcript-method small">' + escapeHtml(method) + '</p>' : '')
-        + '<div class="transcript-text">' + escapeHtml(text) + '</div>'
+    /* editorial marks in square brackets, such as [ilegible] or [grabado: ...], are set apart from the text;
+       nested marks stay inside the outer one */
+    var body = "", depth = 0, escaped = escapeHtml(text);
+    for (var i = 0; i < escaped.length; i++) {
+        var c = escaped[i];
+        if (c == "[") { if (depth == 0) { body += '<span class="transcript-mark">'; } depth++; body += c; }
+        else if (c == "]" && depth > 0) { body += c; depth--; if (depth == 0) { body += '</span>'; } }
+        else { body += c; }
+    }
+    if (depth > 0) { body += '</span>'; }
+    return '<section class="card transcript-panel" aria-labelledby="transcript-title">'
+        + '<div class="card-header">'
+        + '<h3 id="transcript-title" class="transcript-title">Transcription</h3>'
+        + (method != "" ? '<p class="transcript-method">' + escapeHtml(method) + '</p>' : '')
+        + '</div>'
+        + '<div class="card-body transcript-text">' + body + '</div>'
         + '</section>';
 }
 /* function to create item page features */
