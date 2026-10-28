@@ -2,47 +2,56 @@
 title: About
 layout: about
 permalink: /about.html
-# include CollectionBuilder info at bottom
+# true añade al pie de la página el crédito a CollectionBuilder
 credits: true
-# Edit the markdown on in this file to describe your collection
-# Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="/assets/img/jj-ying-WmnsGyaFnCQ-unsplash_opt.jpg" %}
+<!--
+Esta página se escribe en Markdown. Los comentarios como este no se ven en la web:
+explican qué va en cada apartado. Sustituid el texto de ejemplo por el vuestro.
+-->
 
-## About CollectionBuilder-Sheets
+## Criterio de selección
 
-This site is generated using [CollectionBuilder-Sheets](https://github.com/CollectionBuilder/collectionbuilder-sheets), a template  for creating simple digital exhibit websites by loading collection metadata directly from a CSV, designed for teaching digital library skills and easy hosting on GitHub Pages.
+<!-- Qué reúne la colección y por qué estos objetos y no otros. -->
 
-Using CB-Sheets, it is possible to use a live Google Sheets spreadsheet for your collection metadata, allowing you to see the outcome of metadata edits update immediately.
-This enables active collaboration to prototype collections with minimal set up.
+La colección reúne portadas y títulos de cabecera de ediciones antiguas en castellano: la página en
+la que cada edición presenta su título, sea una portada o, cuando no la tiene o el texto forma parte
+de un volumen colectivo, el encabezamiento con que empieza.
 
-<button class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#cbSetUpModal">
-    <svg class="bi icon-sprite" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
-    </svg> 
-    Change the Metadata!
-</button>
-{:.text-center}
+## Fuentes y derechos
 
-## Create your own Metadata
+<!-- De dónde proceden los objetos, cómo se localizaron y con qué derechos se reutilizan. -->
 
-To create metadata compatible with this CollectionBuilder-Sheets instance the best way to get started is to make of copy of our template in Google Drive:
+Los objetos se localizaron en [Europeana](https://www.europeana.eu) y proceden de las bibliotecas
+digitales que los publican: Memòria Digital de Catalunya, Biblioteca Digital de Castilla y León,
+Patrimonio Digital de Castilla-La Mancha, Biblioteca Virtual del Patrimonio Bibliográfico y Biblioteca
+Digital Ciconia. De cada objeto se recogen los derechos que declara la institución de la que se toma
+la imagen: dominio público, CC0 o CC BY 4.0. Cuando un mismo ejemplar figuraba con licencias
+distintas en dos portales, se ha seguido la del portal de la institución.
 
-[CollectionBuilder Metadata Template](https://docs.google.com/spreadsheets/d/1Uv9ytll0hysMOH1j-VL1lZx6PWvc1zf3L35sK_4IuzI/copy?usp=sharing){:.btn .btn-outline-primary}
-{:.text-center}
+## Digitalización y archivos
 
-Alternatively, you can [download the template CSV]({{ '/assets/metadata-template.csv' | relative_url }}) and work on your local machine.
-We suggest editing your CSV using [LibreOffice](https://www.libreoffice.org/) Calc, [OpenRefine](https://openrefine.org/), or Google Sheets (and do not suggest using Excel, since Excel's CSV output is not correctly formatted).
+<!-- Cómo se obtuvieron las imágenes, qué se conserva como máster y copia de trabajo,
+y cuáles se enlazan desde la institución y cuáles se publican desde la colección. -->
 
-Describe your items in your copy of the template, following the [Metadata Guidelines]({{ '/metadata.html' | relative_url }}). 
+Las imágenes se descargaron de cada portal a la mayor resolución disponible y se conservan como
+máster en la carpeta `_coleccion/01-master` del repositorio. De cada una se hizo una copia de trabajo
+para transcribir; en el *Quijote* y las *Novelas exemplares*, que el portal ofrece como doble página,
+la copia de trabajo es la portada recortada. La web enlaza las imágenes desde la institución que las
+publica, tres de ellas por IIIF. Solo el Garcilaso de 1604 se publica desde la colección, porque el
+portal cambió de dominio y los enlaces que difunde Europeana ya no funcionan.
 
-Once you have items added you can test your metadata by clicking the "Change the Metadata" button above.
+## Transcripción
 
-## Learn More
+<!-- Método: herramienta y modelo, fecha, prompt o prompts empleados (uno por tipo de documento,
+si hay varios), qué se revisó y con qué criterios. -->
 
-For full details of creating your own collection site, visit [CollectionBuilder Documentation](https://collectionbuilder.github.io/cb-docs/)!
+Por completar: modelo, fecha y prompt empleados, y criterios de revisión.
 
-The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
-Featured image by [JJ Ying on Unsplash](https://unsplash.com/photos/WmnsGyaFnCQ).
+## Autoría
+
+<!-- Quiénes han hecho la colección y qué ha hecho cada persona, si se reparte el trabajo. -->
+
+David Merino Recalde, para la sesión práctica de la asignatura de digitalización del patrimonio
+escrito del Máster en Humanidades y Patrimonio Digitales de la Universitat Autònoma de Barcelona.

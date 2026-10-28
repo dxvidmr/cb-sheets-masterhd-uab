@@ -1,36 +1,50 @@
-# CollectionBuilder-Sheets
+# Plantilla de colección digital
 
-CollectionBuilder-Sheets is a template for creating simple digital exhibit websites by loading collection metadata directly from a CSV (such as a published Google Sheet!). 
-This enables live collaboration to prototype collections with minimal set up.
-Driven by your collection metadata, the template generates engaging visualizations to browse and explore your objects.
-The resulting static site can be hosted on any basic web server (*or built automatically and hosted for free on GitHub Pages!*).
+Plantilla para publicar una colección digital de patrimonio escrito con sus metadatos y sus
+transcripciones. Está preparada para la sesión práctica de digitalización del Máster en Humanidades y
+Patrimonio Digitales de la UAB y deriva de
+[CollectionBuilder-Sheets](https://github.com/CollectionBuilder/collectionbuilder-sheets).
 
-Visit the [CB-Sheets demo site](https://collectionbuilder.github.io/collectionbuilder-sheets/) to see it in action and even test your own metadata!
+La web se construye con GitHub Pages y lee los metadatos de una hoja de Google Sheets publicada como
+CSV: los cambios en la hoja se ven al abrir la web en una ventana nueva, sin tocar el repositorio.
+Trae como ejemplo una colección de nueve portadas y encabezamientos de impresos hispánicos.
 
-To learn more check [docs/sheets-metadata.md](docs/sheets-metadata.md) or visit the [CollectionBuilder Docs](https://collectionbuilder.github.io/cb-docs/) for step-by-step details for getting started and building collections.
+## Qué se edita
 
-Note that CB-Sheets is based on and mostly compatible with [CollectionBuilder-GH](https://github.com/CollectionBuilder/collectionbuilder-gh), but handles the metadata parsing in a fundamentally different way. 
+Todo puede editarse desde la web de GitHub, sin instalar nada.
 
-If developing CB-Sheets on your local machine, use Ruby 3.4.x (Ruby 4 does not work with the `github-pages` gem) or check the "Gemfile" comments for options.
+| Qué | Dónde |
+| --- | --- |
+| Metadatos y transcripciones de los objetos | La hoja de Google Sheets |
+| Título, subtítulo, descripción, autoría, enlace a la hoja, imagen de cabecera y aspecto | El primer bloque de `_config.yml` |
+| Criterio, fuentes, método de digitalización y de transcripción, autoría | `pages/about.md` |
+| Másteres, copias de trabajo y transcripciones | `_coleccion/` (ver su README) |
+| Imágenes que se publican desde la colección | `objects/` |
 
-----------
+## Estructura
 
-## CollectionBuilder 
+| Carpeta o archivo | Contenido |
+| --- | --- |
+| `_config.yml` | Datos de la colección y opciones técnicas |
+| `pages/` | Páginas de la web; solo `about.md` necesita texto propio |
+| `_coleccion/` | Archivos de trabajo de cada objeto; está en el repositorio, pero no se publica |
+| `objects/` | Versiones de publicación de las imágenes que no se enlazan desde la institución |
+| `docs/` | `metadata-template.csv`, con las columnas de la hoja, y `ejemplo-sheet.csv`, la hoja del ejemplo |
+| `assets/ejemplo-metadata.csv` | Copia del ejemplo que la web lee mientras no se enlaza una hoja |
+| `_data/`, `_includes/`, `_layouts/`, `_sass/`, `assets/` | Código y configuración de la plantilla; no hace falta tocarlos |
 
-<https://collectionbuilder.github.io/>
+## Columnas propias de esta plantilla
 
-CollectionBuilder is a project of University of Idaho Library's [Digital Initiatives](https://www.lib.uidaho.edu/digital/) and the [Center for Digital Inquiry and Learning](https://cdil.lib.uidaho.edu) (CDIL) following the [Lib-Static](https://lib-static.github.io/) methodology. 
-Powered by the open source static site generator [Jekyll](https://jekyllrb.com/) and a modern static web stack, it puts collection metadata to work building beautiful sites.
+Además de los campos de CollectionBuilder, la hoja tiene tres columnas:
 
-The basic theme is created using [Bootstrap](https://getbootstrap.com/).
-Metadata visualizations are built using open source libraries such as [DataTables](https://datatables.net/), [Leafletjs](http://leafletjs.com/), [Spotlight gallery](https://github.com/nextapps-de/spotlight), [lazysizes](https://github.com/aFarkas/lazysizes), and [Lunr.js](https://lunrjs.com/).
-Object metadata is exposed using [Schema.org](http://schema.org) and [Open Graph protocol](http://ogp.me/) standards.
+- `record_url`: enlace al registro del objeto digital en el portal de la institución.
+- `transcript`: texto de la transcripción, que la página del objeto muestra junto a la imagen.
+- `transcript_method`: cómo se hizo la transcripción (herramienta y modelo, fecha, si se revisó).
 
-Questions can be directed to **collectionbuilder.team@gmail.com**
+`identifier` recoge la signatura del ejemplar y `source`, la institución que lo conserva.
 
-## License
+## Créditos y licencia
 
-CollectionBuilder documentation and general web content is licensed [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/). 
-This license does *NOT* include any objects or images used in digital collections, which may have individually applied licenses described by a "rights" field.
-CollectionBuilder code is licensed [MIT](https://github.com/CollectionBuilder/collectionbuilder-gh/blob/main/LICENSE). 
-This license does not include external dependencies included in the `assets/lib` directory, which are covered by their individual licenses.
+El código procede de CollectionBuilder, un proyecto de la Biblioteca de la Universidad de Idaho, y se
+distribuye con licencia [MIT](LICENSE). Las imágenes y los textos de cada objeto tienen los derechos
+que indican sus columnas `rights` y `rightsstatement`.

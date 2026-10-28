@@ -1,8 +1,9 @@
-{% if page.layout == "home-infographic" and site.data.theme.featured-image %}
+{%- assign featured_image = site.featured-image | default: site.data.theme.featured-image -%}
+{% if page.layout == "home-infographic" and featured_image %}
 <style>
 #home-banner {
-    {% if site.data.theme.featured-image contains '/' %}
-    background-image: url('{{ site.data.theme.featured-image | relative_url }}');{% endif %}
+    {% if featured_image contains '/' %}
+    background-image: url('{{ featured_image | relative_url }}');{% endif %}
     background-size: cover;
     background-repeat: no-repeat;
     background-position: {{ site.data.theme.home-banner-image-position | default: 'center' }};
@@ -27,17 +28,17 @@
             <h1 class="display-4">{{ site.title }}</h1>
             {% if site.tagline %}<p class="mb-0">{{ site.tagline }}</p>{% endif %}
         </div>
-        {% unless site.data.theme.featured-image contains '/' %}
+        {% unless featured_image contains '/' %}
         <div id="featured-image-link" class="position-absolute bottom-0 end-0 px-2 bg-dark bg-opacity-75">
         </div>{% endunless %}
     </div>
 </div>
-{% unless site.data.theme.featured-image contains '/' %}
+{% unless featured_image contains '/' %}
 <script> 
 // set up featured image
 var featuredImageInt = function (cb_items) {
     // find item by objectid 
-    var featuredItem = cb_items.find(item => item.objectid == "{{ site.data.theme.featured-image }}");
+    var featuredItem = cb_items.find(item => item.objectid == "{{ featured_image }}");
     if (featuredItem) {
         if (featuredItem.youtubeid) {
             var bgUrl = "url('https://img.youtube.com/vi/" + featuredItem.youtubeid + "/maxresdefault.jpg')";

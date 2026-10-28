@@ -1,12 +1,12 @@
 # Archivos de trabajo de la colección
 
-Esta carpeta guarda los archivos de cada objeto en sus distintas fases. Está en el repositorio, pero
-no se publica en la web: Jekyll omite las carpetas que empiezan por `_`.
+Esta carpeta guarda los archivos de cada objeto en sus distintas fases. Está en el repositorio en GitHub, pero
+no forma parte de la web porque Jekyll omite las carpetas que empiezan por `_`.
 
 | Carpeta | Contenido |
 | --- | --- |
 | `01-master/` | La imagen tal como se descarga de la institución o se captura. No se edita. |
-| `02-trabajo/` | Copia del máster para recortar, girar o ajustar. Es la que se usa para transcribir. |
+| `02-trabajo/` | Copia del máster para recortar, girar o ajustar. Es la que se usará para transcribir. |
 | `03-transcripciones/` | Un archivo de texto por objeto con la transcripción revisada. |
 | `../objects/` | Versión de publicación, en la raíz del repositorio, cuando la imagen se sirve desde la colección. |
 
