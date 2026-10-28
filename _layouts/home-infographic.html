@@ -16,7 +16,9 @@ layout: page
 
     {% include index/featured-terms.html field="subject" title="Top Subjects" btn-color="primary" max=8 %}
 
+    {% if site.home-creators == true %}
     {% include index/featured-terms.html field="creator" title="Creators" btn-color="success" max=8 %}
+    {% endif %}
 
     {% include index/objects.html %}
 
