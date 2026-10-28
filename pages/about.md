@@ -30,6 +30,17 @@ Digital Ciconia. De cada objeto se recogen los derechos que declara la instituci
 la imagen: dominio público, CC0 o CC BY 4.0. Cuando un mismo ejemplar figuraba con licencias
 distintas en dos portales, se ha seguido la del portal de la institución.
 
+## Metadatos
+
+<!-- Criterios propios para rellenar la hoja: vocabulario de materias, forma de los nombres y de
+las fechas, qué se pone cuando un dato no consta. -->
+
+Las materias combinan un género, uno por objeto, y un tema solo cuando agrupa varios objetos o
+precisa el contenido: Poesía, Teatro, Novela, Prosa doctrinal y Crítica literaria como géneros;
+Superstición y Góngora como temas. Los nombres de persona siguen la forma autorizada de los
+catálogos, con sus fechas. La fuente es la institución que conserva el ejemplar y el identificador,
+su signatura, o «No consta» si el registro no la da.
+
 ## Digitalización y archivos
 
 <!-- Cómo se obtuvieron las imágenes, qué se conserva como máster y copia de trabajo,
