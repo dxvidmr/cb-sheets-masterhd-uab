@@ -1,38 +1,42 @@
 {%- comment -%}
     Own colours from _config.yml (color-menu, color-acento, color-fondo), applied over the Bootstrap or
-    Bootswatch theme. Each one is optional: when it is empty, the theme's colour stays.
+    Bootswatch theme. Each one is optional: when it is empty, or only "#", the theme's colour stays.
+    The "#" may also be left out.
 {%- endcomment -%}
-{%- if site.color-menu != "" and site.color-menu or site.color-acento != "" and site.color-acento or site.color-fondo != "" and site.color-fondo -%}
+{%- assign menu = site.color-menu | default: "" | strip | remove_first: "#" -%}
+{%- assign acento = site.color-acento | default: "" | strip | remove_first: "#" -%}
+{%- assign fondo = site.color-fondo | default: "" | strip | remove_first: "#" -%}
+{%- if menu != "" or acento != "" or fondo != "" -%}
 <style>
-{%- if site.color-menu and site.color-menu != "" %}
+{%- if menu != "" %}
 /* menu, footer and the title band of the home page */
-.bg-dark { background-color: {{ site.color-menu }} !important; }
-.bg-dark.bg-opacity-75 { background-color: color-mix(in srgb, {{ site.color-menu }} 75%, transparent) !important; }
-#home-title-band { background-color: color-mix(in srgb, {{ site.color-menu }} 85%, transparent); }
+.bg-dark { background-color: #{{ menu }} !important; }
+.bg-dark.bg-opacity-75 { background-color: color-mix(in srgb, #{{ menu }} 75%, transparent) !important; }
+#home-title-band { background-color: color-mix(in srgb, #{{ menu }} 85%, transparent); }
 /* the theme's colour for the current page in the menu may clash with the new background */
 .navbar .nav-link.active, #footer-nav .nav-link.active { color: #fff !important; background: none; text-decoration: underline; text-underline-offset: 0.35em; }
 {%- endif %}
-{%- if site.color-acento and site.color-acento != "" %}
+{%- if acento != "" %}
 /* links, buttons and subject tags */
-:root { --bs-primary: {{ site.color-acento }}; }
-main a:not(.btn):not(.nav-link):not(.dropdown-item), .breadcrumb a { color: {{ site.color-acento }} !important; }
-main a:not(.btn):not(.nav-link):not(.dropdown-item):hover { color: color-mix(in srgb, {{ site.color-acento }} 75%, black) !important; }
+:root { --bs-primary: #{{ acento }}; }
+main a:not(.btn):not(.nav-link):not(.dropdown-item), .breadcrumb a { color: #{{ acento }} !important; }
+main a:not(.btn):not(.nav-link):not(.dropdown-item):hover { color: color-mix(in srgb, #{{ acento }} 75%, black) !important; }
 .btn-primary, .btn-success {
-    --bs-btn-bg: {{ site.color-acento }}; --bs-btn-border-color: {{ site.color-acento }};
-    --bs-btn-hover-bg: color-mix(in srgb, {{ site.color-acento }} 80%, black); --bs-btn-hover-border-color: color-mix(in srgb, {{ site.color-acento }} 80%, black);
-    --bs-btn-active-bg: color-mix(in srgb, {{ site.color-acento }} 70%, black); --bs-btn-active-border-color: color-mix(in srgb, {{ site.color-acento }} 70%, black);
+    --bs-btn-bg: #{{ acento }}; --bs-btn-border-color: #{{ acento }};
+    --bs-btn-hover-bg: color-mix(in srgb, #{{ acento }} 80%, black); --bs-btn-hover-border-color: color-mix(in srgb, #{{ acento }} 80%, black);
+    --bs-btn-active-bg: color-mix(in srgb, #{{ acento }} 70%, black); --bs-btn-active-border-color: color-mix(in srgb, #{{ acento }} 70%, black);
     --bs-btn-color: #fff; --bs-btn-hover-color: #fff; --bs-btn-active-color: #fff;
 }
 .btn-outline-primary {
-    --bs-btn-color: {{ site.color-acento }}; --bs-btn-border-color: {{ site.color-acento }};
-    --bs-btn-hover-bg: {{ site.color-acento }}; --bs-btn-hover-border-color: {{ site.color-acento }}; --bs-btn-hover-color: #fff;
-    --bs-btn-active-bg: {{ site.color-acento }}; --bs-btn-active-border-color: {{ site.color-acento }}; --bs-btn-active-color: #fff;
+    --bs-btn-color: #{{ acento }}; --bs-btn-border-color: #{{ acento }};
+    --bs-btn-hover-bg: #{{ acento }}; --bs-btn-hover-border-color: #{{ acento }}; --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: #{{ acento }}; --bs-btn-active-border-color: #{{ acento }}; --bs-btn-active-color: #fff;
 }
-.page-item.active .page-link { background-color: {{ site.color-acento }}; border-color: {{ site.color-acento }}; }
+.page-item.active .page-link { background-color: #{{ acento }}; border-color: #{{ acento }}; }
 {%- endif %}
-{%- if site.color-fondo and site.color-fondo != "" %}
+{%- if fondo != "" %}
 /* page background */
-body { background-color: {{ site.color-fondo }}; }
+body { background-color: #{{ fondo }}; }
 {%- endif %}
 </style>
 {%- endif -%}
