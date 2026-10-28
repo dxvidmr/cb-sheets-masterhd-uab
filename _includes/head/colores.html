@@ -8,6 +8,7 @@
 /* menu, footer and the title band of the home page */
 .bg-dark { background-color: {{ site.color-menu }} !important; }
 .bg-dark.bg-opacity-75 { background-color: color-mix(in srgb, {{ site.color-menu }} 75%, transparent) !important; }
+#home-title-band { background-color: color-mix(in srgb, {{ site.color-menu }} 85%, transparent); }
 /* the theme's colour for the current page in the menu may clash with the new background */
 .navbar .nav-link.active, #footer-nav .nav-link.active { color: #fff !important; background: none; text-decoration: underline; text-underline-offset: 0.35em; }
 {%- endif %}

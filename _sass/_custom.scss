@@ -37,3 +37,17 @@
     font-style: italic;
     opacity: 0.6;
 }
+
+/* Title band over the featured image on the home page. Some themes (lux) give headings their own dark
+   colour, and color-menu may be light, so the text is forced to white and the band always carries
+   a dark layer over the menu colour: white keeps at least 3:1 contrast whatever the theme. */
+#home-title-band {
+    background-color: rgba(var(--bs-dark-rgb), 0.85);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+}
+#home-title-band,
+#home-title-band h1,
+#home-title-band p {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
