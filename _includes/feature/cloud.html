@@ -49,7 +49,11 @@
         }
         // split multivalued fields and clean up extra white space
         const re = /\s*;+\s*/;
-        var clean_terms = raw_terms.join(";").toLowerCase().split(re);
+        var original_terms = raw_terms.join(";").split(re);
+        // count terms regardless of case, but show them as written in the metadata
+        var display_terms = {};
+        original_terms.forEach(function(t) { var k = t.toLowerCase(); if (!(k in display_terms)) { display_terms[k] = t; } });
+        var clean_terms = original_terms.map(function(t) { return t.toLowerCase(); });
         // find unique terms
         var unique_terms = clean_terms.filter(function(value, index, self) { return self.indexOf(value) === index; });
         // count unique values and filter based on termsMin
@@ -57,12 +61,12 @@
         for (var i = 0; i < unique_terms.length; i++) {
             var count = clean_terms.filter(function(t) { return t == unique_terms[i] }).length;
             if (count >= {{ include.min | default: 1 }}) {
-                terms.push([unique_terms[i],count]);
+                terms.push([display_terms[unique_terms[i]],count]);
             }
         }
         {% if include.stopwords %}/* apply stopwords */
         var stopWords = {{ include.stopwords | downcase | split: ';' | jsonify }};
-        terms = terms.filter(function(a) { return stopWords.indexOf(a[0]) < 0;});{% endif %}
+        terms = terms.filter(function(a) { return stopWords.indexOf(a[0].toLowerCase()) < 0;});{% endif %}
         // create cloud
         // get cloud div
         var cloud = document.getElementById("{{ functionName }}_div");
