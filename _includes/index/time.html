@@ -13,7 +13,7 @@
 
 {%- endcomment -%}
 {% capture functionName %}collection_time_span{% endcapture %}
-<div class="card mb-3">
+<div class="card mb-3 d-none" data-cb-requires="date">
     <div class="card-body">
         <{{ include.heading_level | default: 'h2' | strip }} class="card-title h5">Time Span</{{ include.heading_level | default: 'h2' | strip }}>
         <p class="card-text h5"><span id="{{ functionName }}"></span>

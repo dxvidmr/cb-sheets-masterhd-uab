@@ -15,7 +15,7 @@
                 {%- assign navItems = site.data.config-nav | where_exp: 'item', 'item.dropdown_parent == nil' -%} 
                 {% for nav in navItems %}
                 {% if nav.stub %}
-                <li class="nav-item">
+                <li class="nav-item{% if nav.requires %} d-none{% endif %}"{% if nav.requires %} data-cb-requires="{{ nav.requires | escape }}"{% endif %}>
                     <a class="nav-link{% if page.url == nav.stub %} active{% endif %}" href="{{ nav.stub | relative_url }}">{{ nav.display_name }}</a>
                 </li>
                 {%- else -%}

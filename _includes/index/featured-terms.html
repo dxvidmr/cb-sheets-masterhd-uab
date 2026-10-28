@@ -20,7 +20,7 @@
 
 {%- endcomment -%}
 {% capture functionName %}featured_terms_{{ include.field | default: include.featured | slugify | replace: "-","_" }}{% endcapture %}
-<div class="card mb-3">
+<div class="card mb-3{% if include.field %} d-none{% endif %}"{% if include.field %} data-cb-requires="{{ include.field }}"{% endif %}>
     {% if include.header %}<{{ include.heading_level | default: 'h2' | strip }} class="card-header h5">{{ include.header }}</{{ include.heading_level | default: 'h2' | strip }}>{% endif %}
     <div class="card-body">
         {% if include.title %}<{{ include.heading_level | default: 'h2' | strip }} class="card-title h5">{{ include.title }}</{{ include.heading_level | default: 'h2' | strip }}>{% endif %}

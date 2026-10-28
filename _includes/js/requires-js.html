@@ -1,0 +1,22 @@
+<script>
+/* show elements only when the metadata has the fields they need.
+   data-cb-requires lists alternatives separated by ";" (any of them is enough);
+   inside an alternative, "&" joins fields that one item must have together.
+   e.g. "subject;creator" or "latitude&longitude" */
+var requiredFieldsInit = function (cb_items) {
+    function hasValue(item, field) {
+        return item[field] && item[field].trim() != "";
+    }
+    document.querySelectorAll("[data-cb-requires]").forEach(function (element) {
+        var alternatives = element.getAttribute("data-cb-requires").split(";");
+        var found = alternatives.some(function (alternative) {
+            var fields = alternative.split("&").map(function (f) { return f.trim(); });
+            return cb_items.some(function (item) {
+                return fields.every(function (field) { return hasValue(item, field); });
+            });
+        });
+        element.classList.toggle("d-none", !found);
+    });
+};
+includeFunctions.push(requiredFieldsInit);
+</script>

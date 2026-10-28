@@ -23,7 +23,7 @@ function transcriptPanel(item) {
     if (text == "") { return ""; }
     var method = item.transcript_method ? item.transcript_method.trim() : "";
     return '<section class="transcript-panel" aria-labelledby="transcript-title">'
-        + '<h3 id="transcript-title" class="h5">Transcripción</h3>'
+        + '<h3 id="transcript-title" class="h5">Transcription</h3>'
         + (method != "" ? '<p class="transcript-method small">' + escapeHtml(method) + '</p>' : '')
         + '<div class="transcript-text">' + escapeHtml(text) + '</div>'
         + '</section>';
