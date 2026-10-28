@@ -19,8 +19,8 @@ author: David Merino Recalde
 
 # Enlace a la hoja de metadatos publicada como CSV
 # (en Google Sheets: Archivo > Compartir > Publicar en la web > Hoja completa, formato CSV).
-# Debe acabar en output=csv. Mientras no haya hoja, puede apuntar a un CSV del repositorio.
-metadata-csv: /assets/ejemplo-metadata.csv
+# Debe acabar en output=csv. Hasta que se cambie, la web muestra la colección de ejemplo.
+metadata-csv: https://docs.google.com/spreadsheets/d/e/2PACX-1vQynGPTD1wk04y2qhT_YQO_vh28IMX-8VwFIDxUqUAhZBc4R2ul73_bgT7Tio78_0rkniMF95WvPWtq/pub?output=csv
 
 # Imagen de la cabecera de la portada: el objectid de uno de los objetos de la colección
 featured-image: quijote-1605

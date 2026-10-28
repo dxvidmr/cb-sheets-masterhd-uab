@@ -30,7 +30,6 @@ Todo puede editarse desde la web de GitHub, sin instalar nada.
 | `_coleccion/` | Archivos de trabajo de cada objeto; está en el repositorio, pero no se publica |
 | `objects/` | Versiones de publicación de las imágenes que no se enlazan desde la institución |
 | `docs/` | `metadata-template.csv`, con las columnas de la hoja, y `ejemplo-sheet.csv`, la hoja del ejemplo |
-| `assets/ejemplo-metadata.csv` | Copia del ejemplo que la web lee mientras no se enlaza una hoja |
 | `_data/`, `_includes/`, `_layouts/`, `_sass/`, `assets/` | Código y configuración de la plantilla; no hace falta tocarlos |
 
 ## Columnas propias de esta plantilla
